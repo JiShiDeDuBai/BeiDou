@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>地图.html</title>
+<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.7&key=acc1f25dda69808278b5fdbff3a22773"></script>
+</head>
+
+<body>
+	<!--高德地图容器815, 456-->
+    <div id="container"></div>
+
+    <style>
+        #container 
+        {
+            width: 1200px;
+            height: 675px;
+        }
+    </style>
+</body>
+	<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap() {
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+    }
+
+    //创建地图函数：
+    var map = new AMap.Map('container', { 
+   
+       zoom:15,//级别
+       center: [104.1466140747, 30.6752217298],//成都理工大学中心点坐标
+       viewMode: '3D'
+       //使用3D视图
+       }); 
+					 
+    function setLocation(x,y){//参数：经纬度  
+       var marker = new AMap.Marker({
+        position:[x, y]//位置
+		
+    })
+    map.add(marker);//添加到地图      
+    }  
+	
+    initMap();//创建和初始化地图
+
+
+</script>
+
+</html>
